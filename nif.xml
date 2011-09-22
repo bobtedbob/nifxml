@@ -1504,9 +1504,9 @@
         <add name="Unknown Int 1" type="int">Unknown. Could be 2 shorts corresponding to Unknown 7 Shorts[1] and [2].</add>
         <add name="Unknown Int 2" type="int" default="0x00000001">Unknown.</add>
         <add name="Unknown 3 Ints" type="int" arr1="3" default="0 0 0x80000000">Unknown. Could be 3 floats.</add>
-        <add name="Collision Response?" type="hkResponseType" default="RESPONSE_SIMPLE_CONTACT">The collision response. See hkResponseType for hkpWorld default implementations.</add>
+        <add name="Collision Response" type="Ref" template="hkResponseType" default="RESPONSE_SIMPLE_CONTACT">The collision response. See hkResponseType for hkpWorld default implementations.</add>
         <add name="Unknown Byte" type="byte" default="0xbe">Unknown</add>
-        <add name="Process Contact Callback Delay?" type="ushort" default="0xffff">Lowers the frequency for processContactCallbacks. A value of 5 means that a callback is raised every 5th frame.</add>
+        <add name="Process Contact Callback Delay" type="ushort" default="0xffff">Lowers the frequency for processContactCallbacks. A value of 5 means that a callback is raised every 5th frame.</add>
         <add name="Unknown 2 Shorts" type="ushort" arr1="2" default="35899 16336">Unknown.</add>
         <add name="Layer Copy" type="OblivionLayer" default="OL_STATIC">Copy of Layer value?</add>
         <add name="Col Filter Copy" type="byte" default="0">Copy of Col Filter value?</add>
@@ -2282,7 +2282,7 @@
     <niobject name="hkPackedNiTriStripsData" abstract="0" inherit="bhkShapeCollection">
         NiTriStripsData for havok data?
         <add name="Num Triangles" type="uint">Number of triangles?</add>
-        <add name="Triangles" type="hkTriangle" arr1="Num Triangles">The physics triangles?</add>
+        <add name="Triangles" type="Ref" template="hkTriangle" arr1="Num Triangles">The physics triangles?</add>
         <add name="Num Vertices" type="uint">Number of vertices.</add>
         <add name="Unknown Byte 1" type="byte" ver1="20.2.0.7">Unknown.</add>
         <add name="Vertices" type="Vector3" arr1="Num Vertices">The vertices?</add>
@@ -2765,7 +2765,7 @@
 
     <niobject name="FxWidget" abstract="0" inherit="NiNode">
         Firaxis-specific UI widgets?
-        <add name="Unknown1" type="byte">Unknown.</add>
+        <add name="Unknown3" type="byte">Unknown.</add>
         <add name="Unknown 292 Bytes" type="byte" arr1="292">Looks like 9 links and some string data.</add>
     </niobject>
 
@@ -3662,13 +3662,13 @@
         Unknown
         <add name="Num Bezier Triangles" type="uint">references.</add>
         <add name="Bezier Triangle" type="Ref" template="NiBezierTriangle4" arr1="Num Bezier Triangles">unknown</add>
-        <add name="Unknown 1" type="uint">Unknown.</add>
+        <add name="Unknown 3" type="uint">Unknown.</add>
         <add name="Count 1" type="ushort">Data count.</add>
-        <add name="Unknown 2" type="ushort">Unknown.</add>
+        <add name="Unknown 4" type="ushort">Unknown.</add>
         <add name="Points 1" type="Vector3" arr1="Count 1">data.</add>
-        <add name="Unknown 3" type="uint">Unknown (illegal link?).</add>
+        <add name="Unknown 5" type="uint">Unknown (illegal link?).</add>
         <add name="Points 2" type="float" arr1="Count 1" arr2="2">data.</add>
-        <add name="Unknown 4" type="uint">unknown</add>
+        <add name="Unknown 6" type="uint">unknown</add>
         <add name="Count 2" type="ushort">data count 2.</add>
         <add name="Data 2" type="ushort" arr1="Count 2" arr2="4">data count.</add>
     </niobject>
@@ -3816,7 +3816,7 @@
         <add name="Joint Descs" type="Ref" template="NiPhysXD6JointDesc" arr1="Num Joints">PhysX Joint Descriptions</add>
         <add name="Unknown Int 1" type="int">Unknown</add>
         <add name="Num Materials" type="uint">Unknown</add>
-        <add name="Material Descs" type="physXMaterialRef"  arr1="Num Materials">PhysX Material Descriptions</add>
+        <add name="Material Descs" type="Ref" template="physXMaterialRef"  arr1="Num Materials">PhysX Material Descriptions</add>
         <add name="Unknown Int 2" type="uint">Unknown</add>
         <add name="Unknown Int 3" type="uint" ver1="20.5.0.0">Unknown</add><!-- in Krazy Rain 20.5.0.0 nifs, not in copetech nifs -->
         <add name="Unknown String 4" type="string" ver1="20.5.0.0">Unknown</add><!-- in Krazy Rain 20.5.0.0 nifs, not in copetech nifs -->
@@ -4007,7 +4007,7 @@
     <niobject name="NiPortal" inherit="NiAVObject">
         A Portal
         <add name="Unknown Flags" type="Flags">Unknown flags.</add>
-        <add name="Unknown Short 1" type="short">Unknown</add>
+        <add name="Unknown Short 2" type="short">Unknown</add>
         <add name="Num Vertices" type="ushort">Number of vertices in this polygon</add>
         <add name="Vertices" type="Vector3" arr1="Num Vertices">Vertices</add>
         <add name="Target" type="Ptr" template="NiNode">Target portal or room</add>
@@ -4223,7 +4223,7 @@
 
     <niobject name="BSStripPSysData" inherit="NiPSysData">
         Bethesda-Specific (mesh?) Particle System Data.
-        <add name="Unknown Short 1" type="short">Unknown</add>
+        <add name="Unknown Short 3" type="short">Unknown</add>
         <add name="Unknown byte 1" type="byte">Unknown</add>
         <add name="Unknown Int 2" type="int">Unknown</add>
         <add name="Unknown Int 3" type="int">Unknown</add>
@@ -4462,7 +4462,7 @@
     <niobject name="BSDebrisNode" inherit="NiNode">
         Bethesda-Specific node.
         <add name="Unknown byte 1" type="byte">Unknown</add>
-        <add name="Unknown Short 1" type="short">Unknown</add>
+        <add name="Unknown Short 2" type="short">Unknown</add>
     </niobject>
 
     <niobject name="bhkBreakableConstraint" abstract="0" inherit="bhkConstraint">
