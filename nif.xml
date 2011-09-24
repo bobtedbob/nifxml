@@ -2282,7 +2282,7 @@
     <niobject name="hkPackedNiTriStripsData" abstract="0" inherit="bhkShapeCollection">
         NiTriStripsData for havok data?
         <add name="Num Triangles" type="uint">Number of triangles?</add>
-        <add name="Triangles" type="Ref" template="hkTriangle" arr1="Num Triangles">The physics triangles?</add>
+        <add name="Triangles" type="hkTriangle" arr1="Num Triangles">The physics triangles?</add>
         <add name="Num Vertices" type="uint">Number of vertices.</add>
         <add name="Unknown Byte 1" type="byte" ver1="20.2.0.7">Unknown.</add>
         <add name="Vertices" type="Vector3" arr1="Num Vertices">The vertices?</add>
